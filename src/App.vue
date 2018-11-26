@@ -1,25 +1,28 @@
-<template lang='pug'>
+<template lang="pug">
   #app
-    #nav
-      router-link(to='/') Home
-      |  |
-      router-link(to='/about') About
-    router-view
+    nav.navbar.has-shadow.is-spaced(role='navigation',
+                                    aria-label='main navigation')
+      .container
+        .navbar-brand
+          a.navbar-item(href='https://bulma.io')
+            img(src='https://bulma.io/images/bulma-logo.png',
+                width='112',
+                height='28')
+          a.navbar-burger.burger(role='button',
+                                 aria-label='menu',
+                                 aria-expanded='false',
+                                 data-target='navbarBasicExample')
+            span(aria-hidden='true')
+            span(aria-hidden='true')
+            span(aria-hidden='true')
+        .navbar-end
+          a.navbar-item ABOUT
+          a.navbar-item PROJECTS
+          a.navbar-item CONTACT
+    #main
+      router-view
 </template>
 
-<style lang='sass'>
-#app
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  text-align: center
-  color: #2c3e50
-
-#nav
-  padding: 30px
-  a
-    font-weight: bold
-    color: #2c3e50
-    &.router-link-exact-active
-      color: #42b983
+<style lang="sass">
+@import 'assets/main.scss'
 </style>
